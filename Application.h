@@ -5,9 +5,12 @@ class Application
 {
 public:
 
-
-	//当たり判定
-	void Collision(void);
+	enum SCENE
+	{
+		TITLE,
+		GAME,
+		GAMEOVER
+	};
 
 	//初期化処理
 	void Init(void);
@@ -18,22 +21,13 @@ public:
 	//解放処理
 	void Release(void);
 
+	void ChangeScene(SCENE scene);
+
 	static constexpr int SCREEN_SIZE_X = 1280;
 	static constexpr int SCREEN_SIZE_Y = 720;
 
-
-	//ゴール地点の設定
-	const float CLEAR_POS_Z = 20000.0f;
-
-	bool IsGameClear(void);
-
-
 private:
-
-
-	//ゲームクリア判定
-	bool isGameClear;
-
+	SCENE scene_;
 };
 
 extern Application app_;

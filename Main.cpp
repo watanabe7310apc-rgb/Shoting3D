@@ -1,5 +1,4 @@
 #include <DxLib.h>
-#include "Main.h"
 #include "Application.h"
 
 
@@ -27,6 +26,7 @@ int WINAPI WinMain(
 		// ゲームループ
 		while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_ESCAPE) == 0)
 		{
+
 			//更新処理
 			app_.Update();
 
@@ -43,7 +43,6 @@ int WINAPI WinMain(
 		// 描画スクリーンの切替
 		ScreenFlip();
 	}
-
 
 	//解放処理
 		app_.Release();
